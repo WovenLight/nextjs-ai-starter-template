@@ -1,0 +1,11 @@
+{
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": true,
+    "singleQuote": false,
+    "jsxSingleQuote": false,
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+    "importOrder": ["^\\w", "^@?\\w", "^react", "^next", "^@/lib/(.*)$", "^@/mastra/(.*)$", "^@/components/(.*)$", "^[./]"],
+    "importOrderSeparation": true,
+    "importOrderSortSpecifiers": true
+}
