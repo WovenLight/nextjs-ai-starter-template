@@ -56,7 +56,8 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -85,4 +86,86 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* CopilotKit Chat Container */
+.copilot-chat-container {
+  flex-grow: 1;
+  overflow: hidden;
+  height: 100%;
+
+  /* Primary colors matching page.tsx blue theme */
+  --copilot-kit-primary-color: theme(colors.blue.600);
+  --copilot-kit-contrast-color: theme(colors.white);
+  --copilot-kit-background-color: var(--background);
+
+  /* Input styling */
+  --copilot-kit-input-background-color: theme(colors.slate.50);
+
+  /* Secondary colors */
+  --copilot-kit-secondary-color: theme(colors.slate.50);
+  --copilot-kit-secondary-contrast-color: theme(colors.slate.700);
+
+  /* Borders and separators */
+  --copilot-kit-separator-color: theme(colors.slate.200);
+  --copilot-kit-muted-color: theme(colors.slate.400);
+
+  /* Shadows matching the page gradient theme */
+  --copilot-kit-shadow-sm: theme(boxShadow.sm);
+  --copilot-kit-shadow-md: theme(boxShadow.md);
+  --copilot-kit-shadow-lg: theme(boxShadow.lg);
+}
+
+/* Dark theme support for CopilotKit */
+@media (prefers-color-scheme: dark) {
+  .copilot-chat-container {
+    --copilot-kit-primary-color: theme(colors.blue.500);
+    --copilot-kit-contrast-color: theme(colors.slate.900);
+    --copilot-kit-background-color: theme(colors.slate.700);
+
+    /* Input styling for dark mode */
+    --copilot-kit-input-background-color: theme(colors.slate.700);
+
+    /* Secondary colors for dark mode */
+    --copilot-kit-secondary-color: theme(colors.slate.700);
+    --copilot-kit-secondary-contrast-color: theme(colors.slate.50);
+
+    /* Borders and separators for dark mode */
+    --copilot-kit-separator-color: theme(colors.slate.600);
+    --copilot-kit-muted-color: theme(colors.slate.500);
+
+    /* Dark theme shadows */
+    --copilot-kit-shadow-sm: theme(boxShadow.sm);
+    --copilot-kit-shadow-md: theme(boxShadow.md);
+    --copilot-kit-shadow-lg: theme(boxShadow.lg);
+  }
+}
+
+.copilot-chat-container .copilotKitChat {
+  height: 100%;
+}
+
+.copilot-chat-container .copilotKitMessage {
+  padding: 0.5rem;
+}
+
+.copilot-chat-container .copilotKitChatMessage {
+  overflow-y: auto;
+}
+
+.copilot-chat-container .copilotKitAssistantMessage {
+  text-align: left;
+}
+
+.copilot-chat-container .copilotKitMessagesContainer {
+  padding: 0.5rem;
+}
+
+.copilot-chat-container .copilotKitInputContainer {
+  padding: 0;
+  padding-bottom: 0.5rem;
+}
+
+.copilot-chat-container .poweredBy {
+  display: none !important;
 }
